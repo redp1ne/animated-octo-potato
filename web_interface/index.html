@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Swipe - Rate Your Favorites!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <div class="emoji">🎨</div>
+            <h1>Artwork Swipe</h1>
+            <p>Discover your favorite artworks!</p>
+            <p class="subtitle">Swipe right ❤️ if you like it, left 👎 if you don't</p>
+            <button id="start-btn" class="btn-primary">Start Swiping</button>
+        </div>
+    </div>
+
+    <!-- Swipe Screen -->
+    <div id="swipe-screen" class="screen">
+        <div class="swipe-container">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="current-index">1</span> / <span id="total-count">0</span>
+            </div>
+            
+            <div id="card-container" class="card-container">
+                <div id="artwork-card" class="artwork-card">
+                    <div class="card-image-wrapper">
+                        <img id="artwork-image" src="" alt="Artwork">
+                        <div class="card-overlay like-overlay">
+                            <div class="swipe-indicator">❤️ LIKE</div>
+                        </div>
+                        <div class="card-overlay dislike-overlay">
+                            <div class="swipe-indicator">👎 DISLIKE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="dislike-btn" class="btn-action btn-dislike">
+                    <span class="btn-emoji">👎</span>
+                    <span class="btn-text">Dislike</span>
+                </button>
+                <button id="like-btn" class="btn-action btn-like">
+                    <span class="btn-emoji">❤️</span>
+                    <span class="btn-text">Like</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Screen -->
+    <div id="summary-screen" class="screen">
+        <div class="summary-content">
+            <div class="emoji">✨</div>
+            <h1>All Done!</h1>
+            <p class="summary-subtitle">Here's your rating summary</p>
+            
+            <div class="stats-container">
+                <div class="stat-card stat-likes">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-number" id="likes-count">0</div>
+                    <div class="stat-label">Liked</div>
+                </div>
+                <div class="stat-card stat-dislikes">
+                    <div class="stat-icon">👎</div>
+                    <div class="stat-number" id="dislikes-count">0</div>
+                    <div class="stat-label">Disliked</div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div id="liked-images" class="results-grid"></div>
+            </div>
+
+            <div class="action-buttons-summary">
+                <button id="restart-btn" class="btn-primary">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="images_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
